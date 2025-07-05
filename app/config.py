@@ -1,3 +1,4 @@
+from os import getenv
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
@@ -9,7 +10,7 @@ class Settings(BaseSettings):
     secret_key: str = "your_default_secret_key"
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
-
+    database_url: str = "DATABASE_URL" 
     class Config:
         env_file = ".env"
 
